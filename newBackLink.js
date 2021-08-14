@@ -1,8 +1,8 @@
 // only acts on first brackets found
 // only supports name field, not notes
-(function newBackLink_0_1(wID = '"_wID_"') {
+(function newBackLink_0_1(wID = "") {
 
-  // [] add: , top = '_top_'
+  // [] wID = '"_wID_"', top = '_top_'
 
   // if (typeof top !== "boolean") top = true;
 

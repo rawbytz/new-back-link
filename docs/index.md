@@ -1,7 +1,6 @@
-# Page Title
-- Describe what this does
+# New Backlink Creator for WorkFlowy
+- Use 
 
-![imageName]()
 
 ## Installation: Drag this link to your bookmarks bar:
 
@@ -15,7 +14,7 @@
 
 
 ## Version Notes:
-- v1.0 (2019-07-14): Bug fix: blah blah
+- v0.1 (2021-08-14): Initial release
 
 <!-- 
 LINKS REFERENCING THIS
