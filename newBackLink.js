@@ -1,7 +1,8 @@
 // only acts on first brackets found
 // only supports name field, not notes
-// (function newBackLink_0_1(wID = '"_wID_"', top = '_top_') {
-(function newBackLink_0_1(wID = "https://workflowy.com/#/c1efb3184277", top = '_top_') {
+(function newBackLink_0_1(wID = '"_wID_"') {
+
+  // [] add: , top = '_top_'
 
   if (typeof top !== "boolean") top = true;
 
