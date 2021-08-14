@@ -25,7 +25,7 @@
   const matchBrackets = str => str.match(/(\[\[)(.*)(\]\])/);
   const origName = focus.getName();
   const bracketMatch = matchBrackets(origName); //gets only first match!
-  if (!bracketMatch) return void toastMsg("No square brackets found in item with cursor focus.", 3, true);
+  if (!bracketMatch) return void toastMsg("No square brackets found.", 3, true);
   const newNode = WF.createItem(parent, 0); // [] add support for top/bottom
   WF.setItemName(newNode, bracketMatch[2]);
 
