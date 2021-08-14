@@ -15,20 +15,29 @@
     if (match) return WF.getItemById(WF.shortIdToId(match[0]));
     return !homeNotOption && str === "" ? WF.rootItem() : null;
   }
+  // [] add mirror check
+  // [] add embed check
   const parent = convertWidToItem(wID);
   if (!parent) return void toastMsg("Parent location is not valid.", 3, true);
 
-  // [] support brackets 
-  // [] find bracketed text
   const focus = WF.focusedItem();
   if (!focus) return void toastMsg("No item with cursor focus found", 3, true);
+  const matchBrackets = str => str.match(/(\[\[)(.*)(\]\])/);
+  const origName = focus.getName();
+  const bracketMatch = matchBrackets(origName); //gets only first match!
+  if (!bracketMatch) return void toastMsg("No square brackets found in item with cursor focus.", 3, true);
+  const newNode = WF.createItem(parent, 0); // [] add support for top/bottom
+  WF.setItemName(newNode, bracketMatch[2]);
+
+  // update original bullet
+  const createItemLink = item => `<a href=\"https://workflowy.com${item.getUrl()}\">${item.getName()}</a>`;  // [] quotes needed?
+  const newName = origName.replace(bracketMatch[0], createItemLink(newNode));
+  WF.setItemName(focus, newName);
+
   // [] support selected text if no brackets found
   // const selectedText = window.getSelection().toString().trim();
   // if (selectedText.length === 0) return void toastMsg("No selected text detected.", 3, true);
+  // will need to escape for selected text
+  // const htmlEscTextForContent = str => str.replace(/&/g, "&amp;").replace(/>/g, "&gt;").replace(/</g, "&lt;").replace(/\u00A0/g, " ");
 
-  const htmlEscTextForContent = str => str.replace(/&/g, "&amp;").replace(/>/g, "&gt;").replace(/</g, "&lt;").replace(/\u00A0/g, " ");
-
-  WF.createItem(WF.currentItem(), 0)
-  WF.setItemName(item, htmlEscTextForContent(str))
-  window.getSelection().toString()
 })();
