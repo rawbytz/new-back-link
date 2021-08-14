@@ -4,7 +4,7 @@
 
   // [] add: , top = '_top_'
 
-  if (typeof top !== "boolean") top = true;
+  // if (typeof top !== "boolean") top = true;
 
   function toastMsg(str, sec, err) {
     WF.showMessage(str, err);
