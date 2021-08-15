@@ -18,8 +18,8 @@
  <a href="javascript:(function newBackLink_0_1(wID=&quot;&quot;){function toastMsg(str,sec,err){WF.showMessage(str,err);setTimeout(WF.hideMessage,(sec||2)*1e3)}function convertWidToItem(str,homeNotOption){const match=str.match(/[a-f0-9]{12}/);if(match)return WF.getItemById(WF.shortIdToId(match[0]));return!homeNotOption&amp;&amp;str===&quot;&quot;?WF.rootItem():null}const parent=convertWidToItem(wID);if(!parent)return void toastMsg(&quot;Parent location is not valid.&quot;,3,true);const focus=WF.focusedItem();if(!focus)return void toastMsg(&quot;No item with cursor focus found&quot;,3,true);const matchBrackets=str=&gt;str.match(/(\[\[)(.*)(\]\])/);const origName=focus.getName();const bracketMatch=matchBrackets(origName);if(!bracketMatch)return void toastMsg(&quot;No square brackets found.&quot;,3,true);const newNode=WF.createItem(parent,0);WF.setItemName(newNode,bracketMatch[2]);const createItemLink=item=&gt;`&lt;a href=&quot;https://workflowy.com${item.getUrl()}&quot;&gt;${item.getName()}&lt;/a&gt;`;const newName=origName.replace(bracketMatch[0],createItemLink(newNode));WF.setItemName(focus,newName)})();">newBackLink</a>
 
 ## Customize the Bookmarklet New Bullet Location
-- In WorkFlowy, "Copy internal link" of your parent node. 
 - Make sure your parent node is not an embedded share or a mirror!
+- In WorkFlowy, "Copy internal link" of your parent node. 
 - Right click the bookmarklet, and select "Edit".
 - In the URL field, scroll to the beginning of the URL/bookmarklet code.
 - Paste your link between the double quotes here: `(wID="")`
@@ -32,8 +32,8 @@
 - Paste the code you copied into the JAVASCRIPT field
 - Define the NAME and SHORTCUT
 - To customize the location, copy JUST the 12 character ID from the node URL
-- Make sure your parent node is not an embedded share or a mirror!
 - **DO NOT PASTE THE ENTIRE URL!!**  
+- Make sure your parent node is not an embedded share or a mirror!
 - Press SAVE
 
 
