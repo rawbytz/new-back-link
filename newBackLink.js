@@ -24,7 +24,7 @@
   const IS_MOBILE = navigator.userAgent.includes("Mobile");
   const focus = IS_MOBILE ? WF.currentItem() : WF.focusedItem();
   if (!focus) return void toastMsg("No item with cursor focus found", 3, true);
-  if (focus.equals(WF.rootItem())) return void toastMsg("Zoom into the item on mobile.", 3, true);
+  if (IS_MOBILE && focus.equals(WF.rootItem())) return void toastMsg("You must zoom into the item on mobile.", 3, true);
   const matchBrackets = str => str.match(/(\[\[)(.*)(\]\])/);
   const origName = focus.getName();
   const bracketMatch = matchBrackets(origName); //gets only first match!
@@ -33,7 +33,7 @@
   WF.setItemName(newNode, bracketMatch[2]);
 
   // update original bullet
-  const createItemLink = item => `<a href=\"https://workflowy.com${item.getUrl()}\">${item.getName()}</a>`;  // [] quotes needed?
+  const createItemLink = item => `<a href=\"https://workflowy.com${item.getUrl()}\">${item.getName()}</a>`;
   const newName = origName.replace(bracketMatch[0], createItemLink(newNode));
   WF.setItemName(focus, newName);
 
