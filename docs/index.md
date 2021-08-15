@@ -32,6 +32,7 @@
 - Paste the code you copied into the JAVASCRIPT field
 - Define the NAME and SHORTCUT
 - To customize the location, copy JUST the 12 character ID from the node URL
+- Paste the ID between the double quotes here: `(wID="")`
 - **DO NOT PASTE THE ENTIRE URL!!**  
 - Make sure your parent node is not an embedded share or a mirror!
 - Press SAVE
