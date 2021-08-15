@@ -21,8 +21,10 @@
   const parent = convertWidToItem(wID);
   if (!parent) return void toastMsg("Parent location is not valid.", 3, true);
 
-  const focus = WF.focusedItem();
+  const IS_MOBILE = navigator.userAgent.includes("Mobile");
+  const focus = IS_MOBILE ? WF.currentItem() : WF.focusedItem();
   if (!focus) return void toastMsg("No item with cursor focus found", 3, true);
+  if (focus.equals(WF.rootItem())) return void toastMsg("Zoom into the item on mobile.", 3, true);
   const matchBrackets = str => str.match(/(\[\[)(.*)(\]\])/);
   const origName = focus.getName();
   const bracketMatch = matchBrackets(origName); //gets only first match!
