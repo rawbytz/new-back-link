@@ -1,6 +1,6 @@
 // only acts on first brackets found
 // only supports name field, not notes
-(function newBackLink_0_1(wID = "") {
+(function newBackLink_0_2(wID = "") {
 
   // [] wID = '"_wID_"', top = '_top_'
 
