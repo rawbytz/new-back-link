@@ -2,8 +2,8 @@
 // only supports name field, not notes
 (function newBackLink_0_2(wID = "") {
 
-  // [] wID = '"_wID_"', top = '_top_'
-
+  // [] Add WFx options
+  // wID = '"_wID_"', top = '_top_'
   // if (typeof top !== "boolean") top = true;
 
   function toastMsg(str, sec, err) {
@@ -18,6 +18,7 @@
   }
   // [] add mirror check
   // [] add embed check
+  // [] Add support for notes
   const parent = convertWidToItem(wID);
   if (!parent) return void toastMsg("Parent location is not valid.", 3, true);
 
@@ -29,7 +30,8 @@
   const origName = focus.getName();
   const bracketMatch = matchBrackets(origName); //gets only first match!
   if (!bracketMatch) return void toastMsg("No square brackets found.", 3, true);
-  const newNode = WF.createItem(parent, 0); // [] add support for top/bottom
+  // [] add support for top/bottom
+  const newNode = WF.createItem(parent, 0);
   WF.setItemName(newNode, bracketMatch[2]);
 
   // update original bullet
