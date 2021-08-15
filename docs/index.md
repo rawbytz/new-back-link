@@ -3,6 +3,7 @@
 - Install as a bookmarklet in a browser, or as a WFx shortcut.
 - Defaults to creating new bullets at the top of your home page.
 - Option: Customize the new bullet location. 
+- Only supports linking in bullet names, no note support.
 
 ## To USE
 - Use WorkFlowy's standard [[Link Creator]]
@@ -18,6 +19,7 @@
 
 ## Customize the Bookmarklet New Bullet Location
 - In WorkFlowy, "Copy internal link" of your parent node. 
+- Make sure your parent node is not an embedded share or a mirror!
 - Right click the bookmarklet, and select "Edit".
 - In the URL field, scroll to the beginning of the URL/bookmarklet code.
 - Paste your link between the double quotes here: `(wID="")`
@@ -30,6 +32,7 @@
 - Paste the code you copied into the JAVASCRIPT field
 - Define the NAME and SHORTCUT
 - To customize the location, copy JUST the 12 character ID from the node URL
+- Make sure your parent node is not an embedded share or a mirror!
 - **DO NOT PASTE THE ENTIRE URL!!**  
 - Press SAVE
 
