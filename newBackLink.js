@@ -1,10 +1,9 @@
 // only acts on first brackets found
 // only supports name field, not notes
-(function newBackLink_0_2(wID = "") {
+// [] MUST MANUALLY EDIT wID field for bookmarklet
+(function newBackLink_0_3(wID = '"_wID_"', top = '_top_') {
 
-  // [] Add WFx options 
-  // wID = '"_wID_"', top = '_top_'
-  // if (typeof top !== "boolean") top = true;
+  if (typeof top !== "boolean") top = true;
 
   function toastMsg(str, sec, err) {
     WF.showMessage(str, err);
@@ -31,7 +30,8 @@
   const bracketMatch = matchBrackets(origName); //gets only first match!
   if (!bracketMatch) return void toastMsg("No square brackets found.", 3, true);
   // [] add support for top/bottom
-  const newNode = WF.createItem(parent, 0);
+  const pty = top ? 0 : parent.getChildren().length;
+  const newNode = WF.createItem(parent, pty);
   WF.setItemName(newNode, bracketMatch[2]);
 
   // update original bullet
