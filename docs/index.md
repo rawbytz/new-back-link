@@ -28,6 +28,7 @@
 - Press SAVE
 
 ## Install as WFx Shortcut
+- If you have PowerPack installed, go [here](https://workflowy.com/#/f7aca7ada13b) and skip the rest.
 - Right click the newBackLink bookmarklet above, and click "Copy link address".
 - Open WFx Options via **wfo**
 - Click ADD JAVASCRIPT
