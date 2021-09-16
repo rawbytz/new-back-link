@@ -1,7 +1,5 @@
-// only acts on first brackets found
-// only supports name field, not notes
 // [] MUST MANUALLY EDIT wID field for bookmarklet
-(function newBackLink_0_3(wID = '"_wID_"', top = '_top_') {
+(function newBackLink_0_4(wID = '"_wID_"', top = '_top_', name = '"_name_"') {
 
   if (typeof top !== "boolean") top = true;
 
