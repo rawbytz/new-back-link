@@ -29,7 +29,6 @@
   const origName = focus.getName();
   const bracketMatch = matchBrackets(origName); //gets only first match!
   if (!bracketMatch) return void toastMsg("No square brackets found.", 3, true);
-  // [] add support for top/bottom
   const pty = top ? 0 : parent.getChildren().length;
   const newNode = WF.createItem(parent, pty);
   WF.setItemName(newNode, bracketMatch[2]);
@@ -44,5 +43,4 @@
   // if (selectedText.length === 0) return void toastMsg("No selected text detected.", 3, true);
   // will need to escape for selected text
   // const htmlEscTextForContent = str => str.replace(/&/g, "&amp;").replace(/>/g, "&gt;").replace(/</g, "&lt;").replace(/\u00A0/g, " ");
-
 })();
